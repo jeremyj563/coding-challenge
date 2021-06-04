@@ -1,4 +1,4 @@
-# Coding Challenge (Application & Software Integration Developer)
+# Coding Challenge
 
 ## Links
 - [Challenge Document](https://docs.google.com/document/d/1d9ZM4tSd9lq7PUOjfgm6nKITpUbGcyUbB2rcA1O55Ho/edit?usp=sharing)
@@ -10,5 +10,5 @@
 ## MongoDB Docker Container
 Run MongoDB container instance **without authentication**
 ```
-PS > docker run -d -p 27017:27017 --name mongo-ccc mongo:latest
+PS > docker run -d -p 27017:27017 --name mongo-cc mongo:latest
 ```
