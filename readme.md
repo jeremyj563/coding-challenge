@@ -8,7 +8,7 @@
 - [A Beginner-Level Introduction to MongoDB with Node.js](https://stackabuse.com/a-beginner-level-introduction-to-mongodb-with-node-js)
 
 ## MongoDB Docker Container
-Run MongoDB container instance **without authentication**
+Run MongoDB container instance **without authentication**. Note: I had best luck with getting the port to bind running from **PowerShell as Administrator**
 ```
 PS > docker run -d -p 27017:27017 --name mongo-cc mongo:latest
 ```
