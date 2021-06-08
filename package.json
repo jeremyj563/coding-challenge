@@ -1,18 +1,18 @@
 {
-  "name": "coding-challenge",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeremyj563/coding-challenge.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jeremyj563/coding-challenge/issues"
-  },
-  "homepage": "https://github.com/jeremyj563/coding-challenge#readme"
+    "name": "coding-challenge",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jeremyj563/coding-challenge.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jeremyj563/coding-challenge/issues"
+    },
+    "homepage": "https://github.com/jeremyj563/coding-challenge#readme"
 }
