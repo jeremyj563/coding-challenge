@@ -7,6 +7,16 @@
 - [Setting Up a MongoDB Service Under Windows via PowerShell](https://studio3t.com/knowledge-base/articles/setup-mongodb-windows-powershell/)
 - [A Beginner-Level Introduction to MongoDB with Node.js](https://stackabuse.com/a-beginner-level-introduction-to-mongodb-with-node-js)
 
+## Install Environment Depedencies
+```
+> choco install -y nodejs docker-desktop
+```
+
+## Install Local Dependencies
+```
+> npm i
+```
+
 ## MongoDB Docker Container
 Run MongoDB container instance **without authentication**. Note: I had best luck with getting the port to bind running from **PowerShell as Administrator**
 ```
