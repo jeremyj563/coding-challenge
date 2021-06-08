@@ -1,6 +1,4 @@
-import mongodb from 'mongodb';
-const { MongoClient } = mongodb;
-const Url = 'mongodb://localhost:27017/mydb';
+import { getCollection } from '@local/common';
 
 (async function () {    
     function newCustomer() {
@@ -14,16 +12,12 @@ const Url = 'mongodb://localhost:27017/mydb';
         }
     }
     
-    const client = await MongoClient.connect(Url, { useUnifiedTopology: true })
-    
-    const db = client.db('coding-challenge')
-    const collection = db.collection('customers')
+    const { collection, client } = await getCollection('coding-challenge', 'customers')
     const johnDoe = newCustomer()
     
     const cmdResult = await collection.insertOne(johnDoe)
-    debugger
     console.log(cmdResult.result)
     //const docs = collection.find({})
     //console.log(docs)
     client.close()
-})();
+})()
