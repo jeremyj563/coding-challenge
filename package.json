@@ -16,6 +16,7 @@
     },
     "homepage": "https://github.com/jeremyj563/coding-challenge#readme",
     "dependencies": {
-        "mongodb": "^3.6.9"
+        "mongodb": "^3.6.9",
+        "@local/common": "file:common"
     }
 }
