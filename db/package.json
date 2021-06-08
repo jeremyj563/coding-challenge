@@ -1,6 +1,11 @@
 {
-  "type": "module",
-  "dependencies": {
-    "mongodb": "^3.6.9"
-  }
+    "name": "db",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index"
+    },
+    "dependencies": {
+        "mongodb": "^3.6.9"
+    }
 }
