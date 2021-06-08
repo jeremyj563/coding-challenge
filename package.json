@@ -14,5 +14,8 @@
     "bugs": {
         "url": "https://github.com/jeremyj563/coding-challenge/issues"
     },
-    "homepage": "https://github.com/jeremyj563/coding-challenge#readme"
+    "homepage": "https://github.com/jeremyj563/coding-challenge#readme",
+    "dependencies": {
+        "mongodb": "^3.6.9"
+    }
 }
