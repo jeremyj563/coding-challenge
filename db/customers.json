@@ -1,0 +1,10 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "address": "123 Hill St",
+        "city": "Melvin",
+        "state": "CA",
+        "zip": 93612
+    }
+]
