@@ -1,10 +1,15 @@
 import mongodb from 'mongodb'
 const { MongoClient } = mongodb
 
-const URL = 'mongodb://localhost:27017/mydb'
+const CONSTANTS = {
+    url: 'mongodb://localhost:27017/mydb',
+    dbName: 'coding-challenge'
+}
 
 async function newClient() {
-    const client = await MongoClient.connect(URL, { useUnifiedTopology: true })
+    const url = CONSTANTS.url
+    const options = { useUnifiedTopology: true }
+    const client = await MongoClient.connect(url, options)
     return client
 }
 
@@ -22,7 +27,8 @@ async function getAllDocs(databaseName, collectionName) {
     return { docs, client }
 }
 
-export { 
+export {
+    CONSTANTS,
     getAllDocs,
     getCollection
 }
