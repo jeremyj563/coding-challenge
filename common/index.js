@@ -8,22 +8,22 @@ const constants = {
     apiPort: 8080
 }
 
-async function newClient() {
+async function _newClient() {
     const url = constants.dbUrl
     const options = { useUnifiedTopology: true }
     const client = await MongoClient.connect(url, options)
     return client
 }
 
-async function getCollection(collectionName, databaseName = constants.dbName) {
-    const client = await newClient()
+async function _getCollection(collectionName, databaseName = constants.dbName) {
+    const client = await _newClient()
     const db = client.db(databaseName)
     const collection = db.collection(collectionName)
     return { collection, client }
 }
 
 async function getAllDocs(collectionName, databaseName = constants.dbName) {
-    const { collection, client } = await getCollection(collectionName, databaseName)
+    const { collection, client } = await _getCollection(collectionName, databaseName)
     const cursor = collection.find()
     const docs = await cursor.toArray()
     client.close()
@@ -31,7 +31,7 @@ async function getAllDocs(collectionName, databaseName = constants.dbName) {
 }
 
 async function getDoc(collectionName, id, databaseName = constants.dbName) {
-    const { collection, client } = await getCollection(collectionName, databaseName)
+    const { collection, client } = await _getCollection(collectionName, databaseName)
     const cursor = collection.find({ id })
     const doc = await cursor.next()
     client.close()
@@ -39,7 +39,7 @@ async function getDoc(collectionName, id, databaseName = constants.dbName) {
 }
 
 async function addAllDocs(collectionName, docs, databaseName = constants.dbName) {
-    const { collection, client } = await getCollection(collectionName, databaseName)
+    const { collection, client } = await _getCollection(collectionName, databaseName)
     await collection.insertMany(docs)
     await client.close()
 }
