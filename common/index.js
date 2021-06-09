@@ -2,14 +2,14 @@ import mongodb from 'mongodb'
 const { MongoClient } = mongodb
 
 const constants = {
-    url: 'mongodb://localhost:27017/mydb',
+    dbUrl: 'mongodb://localhost:27017/mydb',
     dbName: 'coding-challenge',
     apiHost: '0.0.0.0',
     apiPort: 8080
 }
 
 async function newClient() {
-    const url = constants.url
+    const url = constants.dbUrl
     const options = { useUnifiedTopology: true }
     const client = await MongoClient.connect(url, options)
     return client
