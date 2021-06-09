@@ -1,4 +1,4 @@
-import { CONSTANTS, getCollection } from '@local/common'
+import { constants, addAllDocs } from '@local/common'
 import jsonfile from 'jsonfile'
 
 async function getSeedCollections() {
@@ -8,17 +8,11 @@ async function getSeedCollections() {
     return { customers, products, orders }
 }
 
-async function insertCollection(dbName, collectionName, docs) {
-    const { collection, client } = await getCollection(dbName, collectionName)
-    await collection.insertMany(docs)
-    await client.close()
-}
-
 (async function () {
     const collections = await getSeedCollections()
 
     for (const collectionName in collections) {
         const docs = collections[collectionName]
-        await insertCollection(CONSTANTS.dbName, collectionName, docs)
+        await addAllDocs(collectionName, docs)
     }
 })()

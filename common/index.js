@@ -1,34 +1,43 @@
 import mongodb from 'mongodb'
 const { MongoClient } = mongodb
 
-const CONSTANTS = {
+const constants = {
     url: 'mongodb://localhost:27017/mydb',
-    dbName: 'coding-challenge'
+    dbName: 'coding-challenge',
+    apiHost: '0.0.0.0',
+    apiPort: 8080
 }
 
 async function newClient() {
-    const url = CONSTANTS.url
+    const url = constants.url
     const options = { useUnifiedTopology: true }
     const client = await MongoClient.connect(url, options)
     return client
 }
 
-async function getCollection(databaseName, collectionName) {
+async function getCollection(collectionName, databaseName = constants.dbName) {
     const client = await newClient()
     const db = client.db(databaseName)
     const collection = db.collection(collectionName)
     return { collection, client }
 }
 
-async function getAllDocs(databaseName, collectionName) {
-    const { collection, client } = await getCollection(databaseName, collectionName)
+async function getAllDocs(collectionName, databaseName = constants.dbName) {
+    const { collection, client } = await getCollection(collectionName, databaseName)
     const cursor = collection.find()
     const docs = await cursor.toArray()
     return { docs, client }
 }
 
+async function addAllDocs(collectionName, docs, databaseName = constants.dbName) {
+    const { collection, client } = await getCollection(collectionName, databaseName)
+    await collection.insertMany(docs)
+    await client.close()
+}
+
 export {
-    CONSTANTS,
+    constants,
     getAllDocs,
-    getCollection
+    getCollection,
+    addAllDocs
 }

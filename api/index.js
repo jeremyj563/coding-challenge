@@ -1,22 +1,29 @@
-import { getAllDocs } from '@local/common'
+import { constants, getAllDocs } from '@local/common'
 import express from 'express'
 
-const PORT = 8080
-const HOST = '0.0.0.0'
-
 const app = express()
+
 app.get('/customers', getCustomers)
 app.get('/products', getProducts)
+app.get('/orders', getOrders)
 
-app.listen(PORT, HOST)
-console.log(`Running on http://${HOST}:${PORT}`)
+const port = constants.apiPort
+const host = constants.apiHost
+
+app.listen(port, host)
+console.log(`Running on http://${host}:${port}`)
 
 async function getCustomers(request, response) {
-    const { docs: customers, client } = await getAllDocs('coding-challenge', 'customers')
+    const { docs: customers, client } = await getAllDocs('customers')
     response.send(customers)
 }
 
 async function getProducts(request, response) {
-    const { docs: products, client } = await getAllDocs('coding-challenge', 'products')
+    const { docs: products, client } = await getAllDocs('products')
     response.send(products)
+}
+
+async function getOrders(request, response) {
+    const {docs: orders, client } = await getAllDocs('orders')
+    response.send(orders)
 }
