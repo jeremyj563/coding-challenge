@@ -26,7 +26,17 @@ async function getAllDocs(collectionName, databaseName = constants.dbName) {
     const { collection, client } = await getCollection(collectionName, databaseName)
     const cursor = collection.find()
     const docs = await cursor.toArray()
-    return { docs, client }
+    client.close()
+    return docs
+}
+
+async function getDoc(collectionName, id, databaseName = constants.dbName) {
+    const { collection, client } = await getCollection(collectionName, databaseName)
+    const cursor = collection.find({ id })
+    const doc = await cursor.count()
+    debugger
+    client.close()
+    return doc
 }
 
 async function addAllDocs(collectionName, docs, databaseName = constants.dbName) {
@@ -37,7 +47,7 @@ async function addAllDocs(collectionName, docs, databaseName = constants.dbName)
 
 export {
     constants,
+    getDoc,
     getAllDocs,
-    getCollection,
     addAllDocs
 }

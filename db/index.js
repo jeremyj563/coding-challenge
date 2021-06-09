@@ -1,4 +1,4 @@
-import { constants, addAllDocs } from '@local/common'
+import { addAllDocs } from '@local/common'
 import jsonfile from 'jsonfile'
 
 async function getSeedCollections() {
