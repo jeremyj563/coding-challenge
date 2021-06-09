@@ -1,5 +1,4 @@
 import mongodb from 'mongodb'
-import { domainToASCII } from 'node:url'
 const { MongoClient } = mongodb
 
 const URL = 'mongodb://localhost:27017/mydb'
