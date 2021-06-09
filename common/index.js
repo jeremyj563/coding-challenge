@@ -33,8 +33,7 @@ async function getAllDocs(collectionName, databaseName = constants.dbName) {
 async function getDoc(collectionName, id, databaseName = constants.dbName) {
     const { collection, client } = await getCollection(collectionName, databaseName)
     const cursor = collection.find({ id })
-    const doc = await cursor.count()
-    debugger
+    const doc = await cursor.next()
     client.close()
     return doc
 }
