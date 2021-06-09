@@ -1,5 +1,5 @@
-import { CONSTANTS, getCollection } from '@local/common';
-import jsonfile from 'jsonfile';
+import { CONSTANTS, getCollection } from '@local/common'
+import jsonfile from 'jsonfile'
 
 async function getSeedCollections() {
     const customers = await jsonfile.readFile('./customers.json')

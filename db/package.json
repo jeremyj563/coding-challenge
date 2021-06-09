@@ -3,7 +3,7 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-        "start": "node index",
+        "seed": "node index",
         "deploy-local": "docker run -d -p 27017:27017 --name coding-challenge-db mongo:latest"
     }
 }
