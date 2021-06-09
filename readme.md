@@ -22,3 +22,7 @@ Run MongoDB container instance **without authentication**. Note: I had best luck
 ```
 PS > docker run -d -p 27017:27017 --name mongo-cc mongo:latest
 ```
+To seed the database upon initial launch
+```
+PS > npm run start
+```
