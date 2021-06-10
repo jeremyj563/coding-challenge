@@ -2,7 +2,9 @@ import mongodb from 'mongodb'
 const { MongoClient } = mongodb
 
 const constants = {
-    dbUrl: 'mongodb://localhost:27017/mydb',
+    get dbPort() { return process.env.DBPORT },
+    get dbHost() { return process.env.DBHOST },
+    get dbUrl() { return `mongodb://${this.dbHost}:${this.dbPort}/mydb` },
     dbName: 'coding-challenge',
     apiHost: '0.0.0.0',
     apiPort: 8080
