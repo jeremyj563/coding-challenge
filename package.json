@@ -18,7 +18,8 @@
     "dependencies": {
         "@local/common": "file:common",
         "express": "^4.17.1",
+        "mongodb": "^3.6.9",
         "jsonfile": "^6.1.0",
-        "mongodb": "^3.6.9"
+        "ip": "^1.1.5"
     }
 }
