@@ -20,9 +20,19 @@
 ## MongoDB Docker Container
 Run MongoDB container instance **without authentication**. Note: I had best luck with getting the port to bind running from **PowerShell as Administrator**
 ```
-PS > docker run -d -p 27017:27017 --name mongo-cc mongo:latest
+.../coding-challenge/db> npm run docker-run
 ```
 To seed the database upon initial launch
 ```
-PS > npm run start
+.../coding-challenge/db> npm run seed
+```
+
+### API Docker Container
+Build the Node.js Express API Docker image
+```
+.../coding-challenge/api> npm run docker-build
+```
+Run the API container instance
+```
+.../coding-challenge/api> npm run docker-run
 ```
