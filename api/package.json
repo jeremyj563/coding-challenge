@@ -6,7 +6,7 @@
         "start": "set DBPORT=27017 && set DBHOST=localhost && node index.js",
         "test": "curl -i http://localhost:8080/customers/1",
         "docker-build": "cd .. && docker build -f api/Dockerfile . -t jeremyj563/cc-api",
-        "docker-run": "node env && docker run -d -p 8080:8080 --name cc-api --env-file env.list jeremyj563/cc-api"
+        "docker-run": "node ./env.js && docker run --detach --publish 8080:8080 --name cc-api --env-file env.list jeremyj563/cc-api"
     },
     "dependencies": {
         "@local/common": "file:common",
