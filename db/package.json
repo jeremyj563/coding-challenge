@@ -1,9 +1,9 @@
 {
     "name": "db",
-    "type": "module",
+    "type":"module",
     "main": "index.js",
     "scripts": {
-        "seed": "node index",
-        "docker-run": "docker run -d -p 27017:27017 --name coding-challenge-db mongo:latest"
+        "docker-run": "docker run --detach --publish 27017:27017 --name cc-db mongo:latest",
+        "seed": "set DBPORT=27017 && set DBHOST=localhost && node index.js"
     }
 }
