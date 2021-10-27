@@ -3,10 +3,10 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-        "start": "node index",
+        "start": "set DBPORT=27017 && set DBHOST=localhost && node index.js",
         "test": "curl -i http://localhost:8080/customers/1",
-        "docker-build": "cd .. && docker build -f api/Dockerfile . -t jeremyj563/coding-challenge-api",
-        "docker-run": "node env && docker run -d -p 8080:8080 --name coding-challenge-api --env-file env.list jeremyj563/coding-challenge-api"
+        "docker-build": "cd .. && docker build -f api/Dockerfile . -t jeremyj563/cc-api",
+        "docker-run": "node env && docker run -d -p 8080:8080 --name cc-api --env-file env.list jeremyj563/cc-api"
     },
     "dependencies": {
         "@local/common": "file:common",
