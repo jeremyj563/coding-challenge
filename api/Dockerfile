@@ -7,4 +7,4 @@ RUN npm ci
 COPY api ./api
 COPY common ./common
 EXPOSE 8080
-CMD [ "node", "api/index" ]
+CMD [ "node", "api/index.js" ]
