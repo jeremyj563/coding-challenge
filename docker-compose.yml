@@ -1,0 +1,46 @@
+---
+services:
+  db:
+    hostname: cc-db
+    container_name: cc-db
+    image: mongo:latest
+    ports:
+    - 27017:27017
+    networks:
+    - back-tier
+  db-seed:
+    container_name: cc-db-seed
+    build:
+      context: ./
+      dockerfile: ./db-seed/Dockerfile
+    depends_on:
+    - db
+    restart: 'no'
+    environment:
+    - DBHOST=cc-db
+    - DBPORT=27017
+    networks:
+    - back-tier
+  api:
+    hostname: cc-api
+    container_name: cc-api
+    build:
+      context: ./
+      dockerfile: ./api/Dockerfile
+    environment:
+    - DBHOST=cc-db
+    - DBPORT=27017
+    ports:
+    - 8080:8080
+    networks:
+    - back-tier
+  ui:
+    hostname: cc-ui
+    container_name: cc-ui
+    image: node:latest
+    networks:
+    - back-tier
+    - front-tier
+networks:
+  back-tier: {}
+  front-tier: {}

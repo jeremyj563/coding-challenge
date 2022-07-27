@@ -2,8 +2,8 @@ import mongodb from 'mongodb'
 const { MongoClient } = mongodb
 
 const constants = {
-    get dbPort() { return process.env.DBPORT },
     get dbHost() { return process.env.DBHOST },
+    get dbPort() { return process.env.DBPORT },
     get dbUrl() { return `mongodb://${this.dbHost}:${this.dbPort}/mydb` },
     dbName: 'coding-challenge',
     apiHost: '0.0.0.0',
@@ -12,6 +12,7 @@ const constants = {
 
 async function _newClient() {
     const url = constants.dbUrl
+    console.log(url)
     const options = { useUnifiedTopology: true }
     const client = await MongoClient.connect(url, options)
     return client
