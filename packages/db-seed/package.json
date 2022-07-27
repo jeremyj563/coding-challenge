@@ -6,7 +6,7 @@
     "main": "./index.js",
     "scripts": {
         "start": "set DBHOST=localhost && set DBPORT=27017 && node .",
-        "docker:build": "cd ../.. && docker build -f ./packages/cc-db-seed/Dockerfile . -t jeremyj563/cc-db-seed",
+        "docker:build": "cd ../.. && docker build -f ./packages/db-seed/Dockerfile . -t jeremyj563/cc-db-seed",
         "predocker:run": "docker run --detach --publish 27017:27017 --name cc-db mongo:latest",
         "docker:run": "docker run --detach --name cc-db-seed jeremyj563/cc-db-seed"
     },

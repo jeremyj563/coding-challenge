@@ -16,8 +16,8 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. .",
 		"format": "prettier --write --plugin-search-dir=. .",
-        "docker:build": "cd ../.. && docker build -f ./packages/cc-ui/Dockerfile . -t jeremyj563/cc-ui",
-        "docker:run": "docker run --detach --publish 3000:3000 --name cc-ui jeremyj563/cc-ui"
+        "docker:build": "cd ../.. && docker build -f ./packages/ui/Dockerfile . -t jeremyj563/cc-ui",
+        "docker:run": "docker run --detach --publish 3000:3000 --name cc-ui jeremyj563/ui"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^1.0.0-next.85",
