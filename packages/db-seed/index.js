@@ -1,9 +1,6 @@
 import { addAllDocs } from '@jeremyj563/cc-common'
 import jsonfile from 'jsonfile'
 
-// import dotenv from 'dotenv'
-// dotenv.config({path: './.env.dev'})
-
 async function getSeedCollections() {
     const customers = await jsonfile.readFile('./customers.json')
     const products = await jsonfile.readFile('./products.json')
