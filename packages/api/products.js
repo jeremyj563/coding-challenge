@@ -1,5 +1,5 @@
 import { outResponse } from './util.js'
-import { getDoc, getAllDocs } from '@local/common'
+import { getDoc, getAllDocs } from '@jeremyj563/cc-common'
 
 async function getProduct(request, response) {
     const id = parseInt(request.params.id)

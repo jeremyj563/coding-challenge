@@ -1,0 +1,9 @@
+{
+    "name": "@jeremyj563/cc-common",
+    "version": "0.0.1",
+    "type": "module",
+    "exports": "./index.js",
+    "dependencies": {
+        "mongodb": "^3.6.9"
+    }
+}

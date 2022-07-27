@@ -1,7 +1,8 @@
 {
-    "name": "api",
+    "name": "@jeremyj563/cc-api",
+    "version": "0.0.1",
     "type": "module",
-    "exports": "./api/index.js",
+    "exports": "./index.js",
     "scripts": {
         "start": "node .",
         "dev": "set DBHOST=localhost && set DBPORT=27017 && node .",
@@ -10,7 +11,7 @@
         "docker-run": "docker run --detach --publish 8080:8080 --name cc-api jeremyj563/cc-api"
     },
     "dependencies": {
-        "@local/common": "file:../common",
+        "@jeremyj563/cc-common": "~0.0.1",
         "express": "^4.17.1",
         "mongodb": "^3.6.9"
     }

@@ -1,4 +1,4 @@
-import { addAllDocs } from '@local/common'
+import { addAllDocs } from '@jeremyj563/cc-common'
 import jsonfile from 'jsonfile'
 
 async function getSeedCollections() {

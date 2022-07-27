@@ -1,0 +1,22 @@
+{
+    "name": "coding-challenge",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "start-api": "npm --prefix ./packages/api start",
+        "start-ui": "npm --prefix ./packages/ui start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jeremyj563/coding-challenge.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jeremyj563/coding-challenge/issues"
+    },
+    "homepage": "https://github.com/jeremyj563/coding-challenge"
+}

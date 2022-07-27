@@ -1,4 +1,4 @@
-import { constants } from '@local/common'
+import { constants } from '@jeremyj563/cc-common'
 import { getCustomer, getCustomers } from './customers.js'
 import { getProduct, getProducts } from './products.js'
 import { getOrder, getOrders } from './orders.js'
