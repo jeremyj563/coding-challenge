@@ -6,8 +6,8 @@
         "packages/*"
     ],
     "scripts": {
-        "start-api": "npm --prefix ./packages/api start",
-        "start-ui": "npm --prefix ./packages/ui start"
+        "start-api": "npm --prefix ./packages/cc-api start",
+        "start-ui": "npm --prefix ./packages/cc-ui start"
     },
     "repository": {
         "type": "git",
