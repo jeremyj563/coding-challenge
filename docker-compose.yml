@@ -37,7 +37,11 @@ services:
   ui:
     hostname: cc-ui
     container_name: cc-ui
-    image: node:latest
+    build:
+      context: ./
+      dockerfile: ./ui/Dockerfile
+    ports:
+    - 3000:3000
     networks:
     - back-tier
     - front-tier
