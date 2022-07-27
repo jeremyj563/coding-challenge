@@ -5,15 +5,10 @@
 
 ## Install Global Depedencies (Windows)
 ```
-> choco install -y curl docker-desktop
+> choco install -y docker-desktop
 ```
 
 ## Start Docker Compose Stack
 ```
-.../coding-challenge> docker-compose up
-```
-
-## Test API
-```
-> curl http://localhost:8080/customers/1
+.../coding-challenge> docker compose up
 ```
