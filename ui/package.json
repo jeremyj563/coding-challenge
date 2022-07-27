@@ -1,7 +1,11 @@
 {
 	"name": "ui",
+	"type": "module",
+    "main": "./build/index.js",
 	"version": "0.0.1",
 	"scripts": {
+        "prestart": "npm run -s build",
+        "start": "node .",
 		"dev": "vite dev",
 		"build": "vite build",
 		"package": "svelte-kit package",
@@ -10,7 +14,9 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. .",
-		"format": "prettier --write --plugin-search-dir=. ."
+		"format": "prettier --write --plugin-search-dir=. .",
+        "docker-build": "cd .. && docker build -f ui/Dockerfile . -t jeremyj563/cc-ui",
+        "docker-run": "docker run --detach --publish 3000:3000 --name cc-ui jeremyj563/cc-ui"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^1.0.0-next.85",
@@ -23,6 +29,5 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"vite": "^3.0.0"
-	},
-	"type": "module"
+	}
 }
