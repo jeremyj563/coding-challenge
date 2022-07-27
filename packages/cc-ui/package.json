@@ -1,5 +1,5 @@
 {
-    "name": "@jeremyj563/cc-ui",
+	"name": "@jeremyj563/cc-ui",
 	"version": "0.0.1",
 	"type": "module",
     "exports": "./build/index.js",
