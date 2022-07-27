@@ -1,14 +1,15 @@
 {
     "name": "@jeremyj563/cc-api",
     "version": "0.0.1",
+    "private": true,
     "type": "module",
-    "exports": "./index.js",
+    "main": "./index.js",
     "scripts": {
         "start": "node .",
         "dev": "set DBHOST=localhost && set DBPORT=27017 && node .",
         "test": "curl -i http://localhost:8080/customers/1",
-        "docker-build": "cd .. && docker build -f api/Dockerfile . -t jeremyj563/cc-api",
-        "docker-run": "docker run --detach --publish 8080:8080 --name cc-api jeremyj563/cc-api"
+        "docker:build": "cd ../.. && docker build -f ./packages/cc-api/Dockerfile . -t jeremyj563/cc-api",
+        "docker:run": "docker run --detach --publish 8080:8080 --name cc-api jeremyj563/cc-api"
     },
     "dependencies": {
         "@jeremyj563/cc-common": "~0.0.1",

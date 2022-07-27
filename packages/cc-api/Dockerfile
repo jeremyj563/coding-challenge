@@ -2,10 +2,9 @@
 
 FROM node:lts-alpine
 WORKDIR /usr/src/app
-COPY api/package*.json .
-COPY api api
-COPY common common
+COPY ./packages/cc-api packages/api
+COPY ./packages/cc-common packages/common
+COPY ./package*.json .
+RUN npm install
 EXPOSE 8080
-WORKDIR /usr/src/app/api
-RUN npm ci
-CMD ["node", "api/index.js"]
+CMD ["npm", "run", "api"]

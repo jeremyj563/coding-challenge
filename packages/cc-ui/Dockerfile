@@ -2,8 +2,8 @@
 
 FROM node:lts-alpine
 WORKDIR /usr/src/app
-COPY ./ui ./ui
+COPY ./packages/cc-ui packages/cc-ui
+COPY ./package*.json .
+RUN npm install
 EXPOSE 3000
-WORKDIR /usr/src/app/ui
-RUN npm ci
-CMD ["npm", "start"]
+CMD ["npm", "run", "ui"]

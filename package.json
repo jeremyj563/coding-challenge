@@ -1,13 +1,15 @@
 {
-    "name": "coding-challenge",
+    "name": "@jeremyj563/coding-challenge",
     "version": "0.0.1",
     "private": true,
     "workspaces": [
         "packages/*"
     ],
     "scripts": {
-        "start-api": "npm --prefix ./packages/cc-api start",
-        "start-ui": "npm --prefix ./packages/cc-ui start"
+        "db-seed": "npm start -w @jeremyj563/cc-db-seed",
+        "api": "npm start -w @jeremyj563/cc-api",
+        "ui": "npm start -w @jeremyj563/cc-ui",
+        "build:ui": "npm run build -w @jeremyj563/cc-ui"
     },
     "repository": {
         "type": "git",

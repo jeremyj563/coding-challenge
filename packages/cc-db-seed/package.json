@@ -1,11 +1,14 @@
 {
     "name": "@jeremyj563/cc-db-seed",
     "version": "0.0.1",
+    "private": true,
     "type": "module",
-    "exports": "./index.js",
+    "main": "./index.js",
     "scripts": {
-        "docker-run": "docker run --detach --publish 27017:27017 --name cc-db mongo:latest",
-        "seed": "set DBHOST=localhost && set DBPORT=27017 && node index.js"
+        "start": "set DBHOST=localhost && set DBPORT=27017 && node .",
+        "docker:build": "cd ../.. && docker build -f ./packages/cc-db-seed/Dockerfile . -t jeremyj563/cc-db-seed",
+        "predocker:run": "docker run --detach --publish 27017:27017 --name cc-db mongo:latest",
+        "docker:run": "docker run --detach --name cc-db-seed jeremyj563/cc-db-seed"
     },
     "dependencies": {
         "@jeremyj563/cc-common": "~0.0.1",

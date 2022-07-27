@@ -1,9 +1,9 @@
 # db-seed
 
-FROM node:16-alpine
+FROM node:lts-alpine
 WORKDIR /usr/src/app
-COPY db-seed/package*.json .
-RUN npm ci
-COPY db-seed db-seed
-COPY common common
-CMD [ "node", "db-seed/index.js" ]
+COPY ./packages/cc-db-seed packages/db-seed
+COPY ./packages/cc-common packages/common
+COPY ./package*.json .
+RUN npm install
+CMD ["npm", "run", "db-seed"]
